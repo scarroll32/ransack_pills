@@ -1,0 +1,8 @@
+<%= bootstrap_form_for @invoice do |f| %>
+  <%= f.text_field :description %>
+  <%= f.number_field :amount %>
+  <%= f.select :currency, Invoice.currencies.keys.map { |k| [k.humanize, k] } %>
+  <%= f.select :status, Invoice.statuses.keys.map { |k| [k.humanize, k] } %>
+  <%= f.select :customer, Invoice::CUSTOMERS.invert %>
+  <%= f.submit %>
+<% end %>

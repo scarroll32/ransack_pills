@@ -7,6 +7,7 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem "bootstrap_form", ">= 4.0.0"
 gem 'jquery-rails'
 gem 'ffaker'
 

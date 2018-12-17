@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: MyString
+  description: MyString
+  amount: 1.5
+  currency: MyString
+  status: MyString
+
+two:
+  customer: MyString
+  description: MyString
+  amount: 1.5
+  currency: MyString
+  status: MyString
