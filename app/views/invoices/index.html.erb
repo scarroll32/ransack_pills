@@ -1,7 +1,16 @@
 <div class='container'>
 <p id="notice"><%= notice %></p>
 
+<%= search_form_for @search do |f| %>
+  <% Invoice::CUSTOMERS.each do |k,val| %>
+    <%= check_box_tag('q[customer_eq_any][]',k) %>
+    <%= val %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
 <h1>Invoices</h1>
+
 
 <table class='table table-striped table-hover'>
   <thead>
@@ -32,6 +41,7 @@
 </table>
 
 <br>
+<%= paginate @invoices, theme: 'twitter-bootstrap-4' %>
 
 <%= link_to 'New Invoice', new_invoice_path %>
 </div>

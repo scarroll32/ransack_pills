@@ -4,7 +4,10 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all
+    @search = Invoice.ransack(params[:q])
+    # make name the default sort column
+    @search.sorts = 'description' if @search.sorts.empty?
+    @invoices = @search.result.page(params[:page]).per(5)
   end
 
   # GET /invoices/1
